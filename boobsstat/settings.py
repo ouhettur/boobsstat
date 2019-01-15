@@ -126,10 +126,13 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 
-
-
 CRONJOBS = [
     ('*/1 * * * *', 'informer.cron.data_saver', '>> ~/cron_job.log')
 ]
 
 CRONTAB_COMMAND_SUFFIX = '2>&1'
+
+try:
+    import local_settings
+except:
+    raise ImportError
