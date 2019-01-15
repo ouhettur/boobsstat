@@ -133,6 +133,6 @@ CRONJOBS = [
 CRONTAB_COMMAND_SUFFIX = '2>&1'
 
 try:
-    import local_settings
-except:
-    raise ImportError
+    from local_settings import *
+except ImportError:
+    pass
