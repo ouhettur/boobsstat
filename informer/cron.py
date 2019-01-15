@@ -21,12 +21,12 @@ def data_saver():
     data.new_like_count = Show.objects.filter(rating=1).filter(rated_at__gt=time).using(
         'boobsdb').count()
 
-    data.dislike_count = Show.objects.filter(rating =-1).using('boobsdb').count()
-    data.new_dislike_count = Show.objects.filter(rating = -1).filter(rated_at__gt=time).using(
+    data.dislike_count = Show.objects.filter(rating=-1).using('boobsdb').count()
+    data.new_dislike_count = Show.objects.filter(rating=-1).filter(rated_at__gt=time).using(
         'boobsdb').count()
 
-    data.report_count = Show.objects.filter(reported_at__isnull= False).using('boobsdb').count()
-    data.new_report_count = Show.objects.filter(reported_at__isnull= False).filter(reported_at__gt=time).using(
+    data.report_count = Show.objects.filter(reported_at__isnull=False).using('boobsdb').count()
+    data.new_report_count = Show.objects.filter(reported_at__isnull=False).filter(reported_at__gt=time).using(
         'boobsdb').count()
 
     data.inline_query_count = Inlinequery.objects.using('boobsdb').count()

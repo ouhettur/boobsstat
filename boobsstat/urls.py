@@ -4,8 +4,7 @@ from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.conf import settings
 
-
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    url(r'', include('status.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+                  path('admin/', admin.site.urls),
+                  url(r'', include('status.urls')),
+              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

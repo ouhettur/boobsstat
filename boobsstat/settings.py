@@ -124,10 +124,9 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'boobsstat/static'), ]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 
 
-DATABASE_ROUTERS = ["project_db_router.ProjectDbRouter"]
 
 CRONJOBS = [
     ('*/1 * * * *', 'informer.cron.data_saver', '>> ~/cron_job.log')
