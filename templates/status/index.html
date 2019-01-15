@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Boobs stat
+{% endblock %}
+
+{% block content %}
+    <h1> <a href="https://t.me/boobsbot_bot">Boobsbot</a> status</h1>
+
+<table class="container">
+	<thead>
+		<tr>
+			<th><h1>Name</h1></th>
+			<th><h1>All the time</h1></th>
+			<th><h1>last 24 hours</h1></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Users</td>
+			<td>{{ status.user_count }}</td>
+			<td>{{ status.new_user_count }}</td>
+		</tr>
+		<tr>
+			<td>View</td>
+			<td>{{ status.view_count }}</td>
+			<td>{{ status.new_view_count }}</td>
+		</tr>
+		<tr>
+			<td>Images</td>
+			<td>{{ status.image_count }}</td>
+			<td>{{ status.new_image_count }}</td>
+		</tr>
+    <tr>
+			<td>Likes</td>
+			<td>{{ status.like_count }}</td>
+			<td>{{ status.new_like_count }}</td>
+		</tr>
+    <tr>
+			<td>Dislikes</td>
+			<td>{{ status.dislike_count }}</td>
+			<td>{{ status.new_dislike_count }}</td>
+		</tr>
+    <tr>
+			<td>Reports</td>
+			<td>{{ status.report_count }}</td>
+			<td>{{ status.new_report_count }}</td>
+		</tr>
+        <tr>
+			<td>Inline queries</td>
+			<td>{{ status.inline_query_count }}</td>
+			<td>{{ status.new_inline_query_count }}</td>
+		</tr>
+
+	</tbody>
+</table>
+
+
+   <div class="timer">Last update at &nbsp;{{ status.created_at }} (UTC)</div>
+{% endblock %}
