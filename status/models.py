@@ -27,7 +27,7 @@ class Status(models.Model):
     created_at = models.DateTimeField()
 
     def save_data(self):
-        self.created_at = datetime.datetime.now()
+        self.created_at = datetime.datetime.utcnow()
         self.save()
 
     # def __str__(self):
